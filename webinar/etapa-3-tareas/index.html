@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DevTask & Weather - Starter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Hola Cate vamos a cumplir tus metas!</h1>
+      <p>Mini dashboard: clima en tiempo real y lista de tareas (localStorage)</p>
+    </header>
+
+    <section class="panel" id="weather-panel">
+      <h2>Clima</h2>
+      <form id="weather-form">
+        <label for="city">Ciudad:</label>
+        <input id="city" name="city" placeholder="Ej: Buenos Aires" required />
+        <button type="submit">Consultar</button>
+      </form>
+      <div id="weather-result" class="result"></div>
+    </section>
+
+    <section class="panel" id="tasks-panel">
+      <h2>Tareas</h2>
+      <form id="task-form">
+        <input id="task-input" name="task" placeholder="Nueva tarea..." required />
+        <button type="submit">Agregar</button>
+      </form>
+      <ul id="tasks-list" class="tasks"></ul>
+    </section>
+
+    <footer>
+      <small>Starter: Open-Meteo + localStorage · Webinar</small>
+    </footer>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

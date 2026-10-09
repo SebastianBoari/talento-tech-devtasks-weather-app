@@ -1,13 +1,18 @@
+// Paso 1: ciudad -> coordenadas
+// Probá en el navegador: https://geocoding-api.open-meteo.com/v1/search?name=Rosario&count=1&language=es
 export async function geocodeCity(name){
-  const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(name)}&count=1&language=es`;
-  const res = await fetch(url);
-  if(!res.ok) throw new Error('Error en geocoding');
-  const data = await res.json();
-  if(!data.results || data.results.length === 0) throw new Error('Ciudad no encontrada');
-  const {latitude, longitude, name: foundName, country} = data.results[0];
-  return {latitude, longitude, foundName, country};
+  // TODO EN VIVO:
+  //   1. armar la URL con el nombre de la ciudad (encodeURIComponent)
+  //   2. const res = await fetch(url)
+  //   3. si !res.ok -> throw new Error('Error en geocoding')
+  //   4. const data = await res.json()
+  //   5. si no hay data.results -> throw new Error('Ciudad no encontrada')
+  //   6. devolver { latitude, longitude, foundName, country } de data.results[0]
+
 }
 
+// Paso 2: coordenadas -> clima (mismo patrón que geocodeCity)
+// Probá: https://api.open-meteo.com/v1/forecast?latitude=-32.95&longitude=-60.64&current_weather=true
 export async function fetchWeather(lat, lon){
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`;
   const res = await fetch(url);

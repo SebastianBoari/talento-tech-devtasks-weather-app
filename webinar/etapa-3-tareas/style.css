@@ -1,0 +1,56 @@
+:root{
+  --bg-1: #0b1220; /* deep navy */
+  --bg-2: #0f1724; /* slightly lighter */
+  --card-glass: rgba(255,255,255,0.03);
+  --muted: #9aa4b2;
+  --accent-a: #7c3aed; /* purple */
+  --accent-b: #06b6d4; /* cyan */
+  --glass-border: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent), linear-gradient(180deg,var(--bg-1), var(--bg-2)); color:#e6eef8; margin:0; padding:28px}
+.container{max-width:1100px;margin:0 auto}
+header{margin-bottom:18px}
+header h1{margin:0;font-size:3rem}
+header p{margin:6px 0 0;color:var(--muted)}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;margin-bottom:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid var(--glass-border)}
+form{display:flex;gap:10px;align-items:center}
+input[type="text"],input{flex:1;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);color:inherit}
+input::placeholder{color:rgba(230,238,248,0.5)}
+button{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(124,58,237,0.14);font-weight:600}
+.result{margin-top:14px;color:var(--muted)}
+.tasks{list-style:none;padding:0;margin:0}
+.tasks li{display:flex;justify-content:space-between;align-items:flex-start;padding:18px;border-radius:12px;margin-bottom:14px;background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+.tasks li .task-left{display:flex;gap:12px;align-items:flex-start}
+.tasks li span{display:block;font-weight:600}
+.task-actions{display:flex;gap:8px}
+.task-actions button{background:transparent;color:inherit;border:1px solid rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;cursor:pointer}
+.completed{opacity:0.6;text-decoration:line-through}
+footer{font-size:.9rem;color:var(--muted);margin-top:8px}
+
+/* Colorful task cards (alternating) */
+.tasks li:nth-child(1){background:linear-gradient(90deg,#8b5cf6 0%, #c084fc 100%);color:#101016}
+.tasks li:nth-child(2){background:linear-gradient(90deg,#4f46e5 0%, #06b6d4 100%);color:#fff}
+.tasks li:nth-child(3){background:linear-gradient(90deg,#16a34a 0%, #86efac 100%);color:#08110a}
+.tasks li:nth-child(4){background:linear-gradient(90deg,#f59e0b 0%, #fb7185 100%);color:#1a0f08}
+
+/* Tag / pill styles */
+.tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:0.85rem;font-weight:600}
+.tag--purple{background:linear-gradient(90deg,#7c3aed33,#06b6d433);color:#fff}
+.tag--blue{background:#0ea5e933;color:#fff}
+.tag--green{background:#16a34a33;color:#05250b}
+.tag--yellow{background:#f59e0b33;color:#2a1200}
+
+/* Selected tasks bar */
+.selected-bar{background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(0,0,0,0.12));padding:12px;border-radius:10px;margin:12px 0;display:flex;justify-content:space-between;align-items:center}
+
+/* Floating Action Button */
+.fab{position:fixed;right:32px;bottom:32px;width:64px;height:64px;border-radius:999px;background:linear-gradient(135deg,#ff5edf,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;box-shadow:0 18px 50px rgba(124,58,237,0.28);border:4px solid rgba(255,255,255,0.04);cursor:pointer}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .container{padding:0 18px}
+  .tasks li{flex-direction:column;align-items:stretch}
+  form{flex-direction:column;align-items:stretch}
+  .fab{right:18px;bottom:18px}
+}
