@@ -47,7 +47,7 @@ function renderWeather(geo, weather){
   WEATHER_RESULT.innerHTML = `
     <strong>${geo.foundName}, ${geo.country}</strong>
     <div>Temperatura: ${weather.temperature} °C</div>
-    <div>Velocidad del viento: ${weather.windspeed} m/s</div>
+    <div>Velocidad del viento: ${weather.windspeed} km/h</div>
     <div>Dirección del viento: ${weather.winddirection}°</div>
     <div>Estado: ${weather.weathercode ?? 'n/a'}</div>
   `;
